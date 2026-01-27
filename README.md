@@ -1,4 +1,4 @@
-### Easy Edit v1.2 - After Effects 智能合成修改脚本<br>
+# Easy Edit v1.2 - After Effects 智能合成修改脚本<br>
 Easy Edit 是一款专为 Adobe After Effects 设计的高效脚本工具，旨在简化繁琐的合成设置修改流程。<br>
 它具备“智能判定”与“递归穿透”功能，能够根据您的选择状态，快速批量地修改合成时长、帧率及尺寸，极大提升项目整理与修改的效率。<br><br>
 ## 🇨🇳 中文说明 (Chinese)
@@ -25,19 +25,19 @@ Mac: /Applications/Adobe After Effects [版本]/Scripts/ScriptUI Panels/<br>
 该面板支持停靠（Dockable），您可以将其吸附在 AE 界面的任意位置。<br><br>
 
 ## 🎮 使用指南<br>
-# 1. 时长与出点控制<br>
+### 1. 时长与出点控制<br>
 对齐至播放头：将时间线指针（CTI）移动到想要结束的位置，点击按钮。脚本会将合成时长或选中图层的出点裁剪至此（包含当前帧）。<br>
 增加 20 秒：点击即可快速在当前时长基础上增加 20 秒。<br>
 修改模式 (Radio Buttons)：<br>
 若只想改合成总时长而不改变内部结构，请选择模式 3。<br>
 若想让内部所有子合成同步变长/变短，请选择模式1或模式2。<br><br>
 
-# 2. 帧率设置 (FPS)<br>
+### 2. 帧率设置 (FPS)<br>
 输入目标帧率（如 25, 30, 60）。<br>
 勾选 开启子合成穿透修改，可将所有嵌套的子合成统一改为指定帧率。<br>
 点击 应用帧率修改。<br><br>
 
-# 3. 合成尺寸设置 (Size)<br>
+### 3. 合成尺寸设置 (Size)<br>
 输入格式为 宽度 * 高度（例如：1920 * 1080）。<br>
 同样支持子合成穿透修改。<br>
 点击 应用尺寸修改。<br>
@@ -78,19 +78,19 @@ Go to the top menu: Window -> EasyEdit.<br>
 The panel is dockable and can be placed anywhere in your workspace.<br><br>
 
 ## 🎮 How to Use<br>
-# 1. Duration / Out Point Control<br>
+### 1. Duration / Out Point Control<br>
 Align to Playhead: Move the CTI to your desired end point and click. The script sets the duration/out-point exactly to this time (inclusive of the current frame).<br>
 Add 20s: Quickly adds 20 seconds to the current duration.<br>
 Modes:<br>
 Use Mode 3 if you only want to change the container duration.<br>
 Use Mode 1 or Mode 2 to recursively adjust internal layers and sub-comps.<br><br>
 
-# 2. Frame Rate (FPS)<br>
+### 2. Frame Rate (FPS)<br>
 Enter your desired FPS (e.g., 25, 30, 60).<br>
 Check Sub-Comp Penetrate to apply this FPS to all nested compositions.<br>
 Click Apply FPS.<br><br>
 
-# 3. Comp Size<br>
+### 3. Comp Size<br>
 Enter dimensions in Width * Height format (e.g., 1080 * 1920).<br>
 Check Sub-Comp Penetrate to resize all nested compositions recursively.<br>
 Click Apply Size.<br><br>
