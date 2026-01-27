@@ -18,7 +18,7 @@ Easy Edit 是一款专为 Adobe After Effects 设计的高效脚本工具，旨�
 ## 📥 安装方法<br>
 下载 EasyEdit.jsx 文件。<br>
 将脚本文件复制到 After Effects 的脚本面板文件夹中：<br>
-Windows: ...\Adobe After Effects [版本]\Support Files\Scripts\ScriptUI Panels\<br>
+Windows: ...\Adobe After Effects [版本]\Support Files\Scripts\ScriptUI Panels\ <br>
 Mac: /Applications/Adobe After Effects [版本]/Scripts/ScriptUI Panels/<br>
 重启 After Effects<br>
 在顶部菜单栏选择 窗口 (Window) -> EasyEdit 即可打开面板。<br>
