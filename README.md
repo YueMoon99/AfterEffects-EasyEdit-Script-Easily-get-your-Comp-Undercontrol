@@ -2,6 +2,8 @@
 Easy Edit 是一款专为 Adobe After Effects 设计的高效脚本工具，旨在简化繁琐的合成设置修改流程。<br>
 它具备“智能判定”与“递归穿透”功能，能够根据您的选择状态，快速批量地修改合成时长、帧率及尺寸，极大提升项目整理与修改的效率。<br><br>
 ## 🇨🇳 中文说明 (Chinese)
+<img width="312" height="624" alt="屏幕截图 2026-01-27 155223" src="https://github.com/user-attachments/assets/edd29daf-ce2c-48d9-a174-f706932bb9ee" /><br>
+
 ## ✨ 主要功能
 智能上下文判定<br>
 有选中时：修改所选图层对应的源合成（Source Comp）。<br>
@@ -52,6 +54,7 @@ Bug反馈或更多脚本制作建议：我的博客与我联系<br>
 ## ✨ Features<br>
 Easy Edit v1.2 is a smart utility script for Adobe After Effects designed to streamline composition settings adjustment. <br>
 It features "Smart Context Detection" and "Recursive Penetration" logic to maximize efficiency.<br><br>
+<img width="312" height="624" alt="屏幕截图 2026-01-27 155225" src="https://github.com/user-attachments/assets/b06d93e5-003a-4c70-8a93-8edf749aa875" /><br>
 
 Smart Context Detection<br>
 Selection Exists: Modifies the Source Comps of the selected layers.<br>
