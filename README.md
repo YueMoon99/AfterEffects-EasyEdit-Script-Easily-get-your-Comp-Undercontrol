@@ -71,7 +71,7 @@ Quick Actions<br>
 ## 📥 Installation<br>
 Download the EasyEdit.jsx file.<br>
 Copy the file to the ScriptUI Panels folder:<br>
-Windows:...\Adobe After Effects [Version]\Support Files\Scripts\ScriptUI Panels\<br>
+Windows:...\Adobe After Effects [Version]\Support Files\Scripts\ScriptUI Panels\ <br>
 Mac: /Applications/Adobe After Effects [Version]/Scripts/ScriptUI Panels/<br>
 Restart After Effects.<br>
 Go to the top menu: Window -> EasyEdit.<br>
