@@ -1,5 +1,3 @@
-﻿// AE Script: Easy Edit v1.2 (Chinese Version)
-// 功能：智能属性修改器（支持出点对齐、增加时长、帧率及尺寸递归修改）
 (function(thisObj) { 
     var isDockablePanel = (thisObj instanceof Panel);
     var mainWindow;
@@ -10,7 +8,6 @@
         mainWindow = new Window("palette", "Easy Edit", undefined, {resizeable: true});
     }
 
-    // --- UI 界面布局设置 ---
     mainWindow.orientation = "column";
     mainWindow.alignChildren = "left";
     mainWindow.spacing = 10;
@@ -26,6 +23,7 @@
     durationGroup.alignChildren = "left";
     durationGroup.preferredSize.width = panelWidth;
     durationGroup.maximumSize.width = panelWidth;
+    durationGroup.margins = 10;
     var radio1 = durationGroup.add("radiobutton", undefined, "1、强制修改所有图层 + 子合成穿透");
     var radio2 = durationGroup.add("radiobutton", undefined, "2、仅原本触及终点的图层 + 穿透");
     var radio3 = durationGroup.add("radiobutton", undefined, "3、仅修改选中合成时长 (不改内容)");
@@ -44,6 +42,7 @@
     frPanel.alignChildren = "left";
     frPanel.preferredSize.width = panelWidth;
     frPanel.maximumSize.width = panelWidth;
+    frPanel.margins = 10;
     var frInputGroup = frPanel.add("group");
     var frInput = frInputGroup.add("edittext", undefined, "25");
     frInput.size = [buttonWidth, 25]; // 微调宽度以适应标签
@@ -57,6 +56,7 @@
     sizePanel.alignChildren = "left";
     sizePanel.preferredSize.width = panelWidth;
     sizePanel.maximumSize.width = panelWidth;
+    sizePanel.margins = 10;
     var sizeInputGroup = sizePanel.add("group");
     var sizeInput = sizeInputGroup.add("edittext", undefined, "1920 * 1080");
     sizeInput.size = [buttonWidth, 25];
