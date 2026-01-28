@@ -114,8 +114,6 @@
     }
 
     // --- BUTTON CLICK EVENTS ---
-
-    // New Function: Add 20 Seconds
     addTimeButton.onClick = function() {
         app.beginUndoGroup("Easy Edit: Add 20s");
         try {
@@ -124,16 +122,13 @@
             var addAmount = 20;
             var selectedLayers = activeComp.selectedLayers;
             var mode = radio1.value ? 1 : (radio2.value ? 2 : 3);
-
             if (selectedLayers.length === 0) {
-                // If no selection, apply to active comp (with optional recursive logic)
                 if (mode !== 3) {
                     processDurationRecursive(activeComp, activeComp.duration + addAmount, mode, {});
                 } else {
                     activeComp.duration += addAmount;
                 }
             } else {
-                // If layers selected, apply to them
                 var processed = {};
                 for (var j = 0; j < selectedLayers.length; j++) {
                     var layer = selectedLayers[j];
@@ -157,7 +152,6 @@
             if (!(activeComp instanceof CompItem)) return;
             var targetTime = activeComp.time + activeComp.frameDuration;
             var selectedLayers = activeComp.selectedLayers;
-
             if (selectedLayers.length === 0) {
                 activeComp.duration = targetTime;
             } else {
