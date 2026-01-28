@@ -13,9 +13,9 @@
     mainWindow.spacing = 10;
     mainWindow.margins = 15;
     var panelWidth = 280; 
-    var buttonWidth = 250;
+    var buttonWidth = panelWidth - 30;
     var blogText = mainWindow.add("statictext", undefined, "博客：yuemoon.vip   B站：UID223633562");
-    blogText.size = [panelWidth, 15];
+    blogText.size = [buttonWidth, 15];
     
     // --- 1. 时长与出点设置 ---
     var durationGroup = mainWindow.add("panel", undefined, "时长/出点控制");
@@ -42,13 +42,14 @@
     frPanel.alignChildren = "left";
     frPanel.preferredSize.width = panelWidth;
     frPanel.maximumSize.width = panelWidth;
-    frPanel.margins = 10;
     var frInputGroup = frPanel.add("group");
     var frInput = frInputGroup.add("edittext", undefined, "25");
     frInput.size = [buttonWidth, 25]; // 微调宽度以适应标签
     var frPenetrate = frPanel.add("checkbox", undefined, "开启子合成穿透修改");
     var frButton = frPanel.add("button", undefined, "应用帧率修改");
     frButton.size = [buttonWidth, 25];
+    frPanel.margins = 10;
+
 
     // --- 3. 合成尺寸设置 ---
     var sizePanel = mainWindow.add("panel", undefined, "合成尺寸 (有选中改选中，没选中改当前)");
@@ -56,13 +57,14 @@
     sizePanel.alignChildren = "left";
     sizePanel.preferredSize.width = panelWidth;
     sizePanel.maximumSize.width = panelWidth;
-    sizePanel.margins = 10;
     var sizeInputGroup = sizePanel.add("group");
     var sizeInput = sizeInputGroup.add("edittext", undefined, "1920 * 1080");
     sizeInput.size = [buttonWidth, 25];
     var sizePenetrate = sizePanel.add("checkbox", undefined, "开启子合成穿透修改");
     var sizeButton = sizePanel.add("button", undefined, "应用尺寸修改");
     sizeButton.size = [buttonWidth, 25];
+    sizePanel.margins = 10;
+
 
     // --- 页脚信息 ---
     var footerDivider = mainWindow.add("statictext", undefined, "——————————————————————");
