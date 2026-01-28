@@ -44,12 +44,11 @@
     frPanel.maximumSize.width = panelWidth;
     var frInputGroup = frPanel.add("group");
     var frInput = frInputGroup.add("edittext", undefined, "25");
-    frInput.size = [buttonWidth, 25]; // 微调宽度以适应标签
+    frInput.size = [buttonWidth, 25]; 
     var frPenetrate = frPanel.add("checkbox", undefined, "开启子合成穿透修改");
     var frButton = frPanel.add("button", undefined, "应用帧率修改");
     frButton.size = [buttonWidth, 25];
     frPanel.margins = 10;
-
 
     // --- 3. 合成尺寸设置 ---
     var sizePanel = mainWindow.add("panel", undefined, "合成尺寸 (有选中改选中，没选中改当前)");
@@ -65,14 +64,10 @@
     sizeButton.size = [buttonWidth, 25];
     sizePanel.margins = 10;
 
-
     // --- 页脚信息 ---
     var footerDivider = mainWindow.add("statictext", undefined, "——————————————————————");
     footerDivider.size = [panelWidth, 10];
     var copyText = mainWindow.add("statictext", undefined, "开源项目，禁止倒卖。");
-
-
-    // --- 核心逻辑函数 ---
 
     function forceRefresh(layer) {
         var s = layer.enabled; layer.enabled = !s; layer.enabled = s;
@@ -81,7 +76,6 @@
         }
     }
 
-    // 递归处理时长的核心函数
     function processDurationRecursive(comp, newDuration, mode, processedComps) {
         if (processedComps[comp.id]) return;
         processedComps[comp.id] = true;
@@ -89,7 +83,6 @@
         comp.duration = newDuration;
         for (var i = comp.numLayers; i >= 1; i--) {
             var layer = comp.layers[i];
-            // 判断是否需要递归：模式1全改；模式2仅改原本对齐尾部的
             var shouldModify = (mode === 1) || (mode === 2 && layer.outPoint >= oldDur - 0.01);
             if (shouldModify) {
                 if (layer.source instanceof CompItem) processDurationRecursive(layer.source, newDuration, mode, processedComps);
@@ -120,27 +113,21 @@
     }
 
     // --- 按钮点击事件 ---
-
-    // 新增功能：增加 20 秒 (已移除弹窗)
     addTimeButton.onClick = function() {
         app.beginUndoGroup("Easy Edit: 增加20秒");
         try {
             var activeComp = app.project.activeItem;
             if (!(activeComp instanceof CompItem)) return;
-            var addAmount = 20; // 增加的秒数
+            var addAmount = 20; 
             var selectedLayers = activeComp.selectedLayers;
             var mode = radio1.value ? 1 : (radio2.value ? 2 : 3);
-
             if (selectedLayers.length === 0) {
-                // 情况A：无选中，修改当前合成 (支持递归)
                 if (mode !== 3) {
                     processDurationRecursive(activeComp, activeComp.duration + addAmount, mode, {});
                 } else {
                     activeComp.duration += addAmount;
                 }
-                // alert removed
             } else {
-                // 情况B：有选中，修改选中图层
                 var processed = {};
                 for (var j = 0; j < selectedLayers.length; j++) {
                     var layer = selectedLayers[j];
@@ -149,23 +136,19 @@
                         if (mode !== 3) processDurationRecursive(layer.source, newDur, mode, processed);
                         else layer.source.duration = newDur;
                     }
-                    // 无论是否是合成，出点都后移20秒
                     layer.outPoint += addAmount;
                     forceRefresh(layer);
                 }
-                // alert removed
             }
         } catch (e) { alert("错误: " + e.toString()); }
         app.endUndoGroup();
     };
 
-    // 原功能：对齐播放头 (+1帧)
     setEndPointButton.onClick = function() {
         app.beginUndoGroup("Easy Edit: 对齐出点");
         try {
             var activeComp = app.project.activeItem;
             if (!(activeComp instanceof CompItem)) return;
-            // 逻辑：CTI位置 + 1帧
             var targetTime = activeComp.time + activeComp.frameDuration;
             var selectedLayers = activeComp.selectedLayers;
 
@@ -190,7 +173,6 @@
         app.endUndoGroup();
     };
 
-    // 帧率修改
     frButton.onClick = function() {
         app.beginUndoGroup("Easy Edit: 修改帧率");
         try {
@@ -220,7 +202,6 @@
         app.endUndoGroup();
     };
 
-    // 尺寸修改
     sizeButton.onClick = function() {
         app.beginUndoGroup("Easy Edit: 修改尺寸");
         try {
