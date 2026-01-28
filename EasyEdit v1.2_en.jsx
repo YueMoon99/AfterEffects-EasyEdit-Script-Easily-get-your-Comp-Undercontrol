@@ -1,4 +1,4 @@
-﻿(function(thisObj) { 
+(function(thisObj) { 
     var isDockablePanel = (thisObj instanceof Panel);
     var mainWindow;
     if (isDockablePanel) {
@@ -13,9 +13,9 @@
     mainWindow.spacing = 10;
     mainWindow.margins = 15;
     var panelWidth = 280; 
-    var buttonWidth = 250;
+    var buttonWidth = panelWidth - 30;
     var blogText = mainWindow.add("statictext", undefined, "Blog: yuemoon.vip   Bilibili: UID223633562");
-    blogText.size = [panelWidth, 15];
+    blogText.size = [buttonWidth, 15];
     
     // --- 1. DURATION / OUT POINT SECTION ---
     var durationGroup = mainWindow.add("panel", undefined, "Duration / Out Point Control");
